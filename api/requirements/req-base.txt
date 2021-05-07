@@ -63,3 +63,4 @@ textX
 
 # Email templates
 mistune
+django>=2.2.22 # not directly required, pinned by Snyk to avoid a vulnerability
