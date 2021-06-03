@@ -62,3 +62,4 @@ mistune
 
 # Filetype scanning
 python-magic
+django>=2.2.24 # not directly required, pinned by Snyk to avoid a vulnerability
