@@ -6,3 +6,5 @@ django-debug-toolbar
 
 # Let's also add the testing requirements
 -r req-test.txt
+django>=2.2.18 # not directly required, pinned by Snyk to avoid a vulnerability
+sqlparse>=0.4.2 # not directly required, pinned by Snyk to avoid a vulnerability
