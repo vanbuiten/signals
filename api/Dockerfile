@@ -1,4 +1,4 @@
-FROM amsterdam/python:3.9.6-slim-buster
+FROM amsterdam/python:3.9.6-slim-buster as app
 LABEL org.opencontainers.image.authors="datapunt@amsterdam.nl"
 
 ENV PYTHONUNBUFFERED 1
@@ -32,3 +32,13 @@ USER datapunt
 RUN SECRET_KEY=$DJANGO_SECRET_KEY python manage.py collectstatic --no-input
 
 CMD uwsgi
+
+FROM app as test
+
+WORKDIR /app/
+COPY requirements/req-test.txt /requirements/req-test.txt
+
+USER root
+RUN pip install -r /requirements/req-test.txt
+
+USER datapunt

@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   api:
-    build: ./api
+    build:
+      context: ./api
+      target: app
     ports:
       - "8000:8000"
     depends_on:
@@ -26,6 +28,18 @@ services:
       - ./docker-compose/scripts/initialize.sh:/initialize.sh
     command:
       - /initialize.sh
+
+  test:
+    build:
+      context: ./api
+      target: test
+    depends_on:
+      database:
+        condition: service_healthy
+    env_file:
+      - docker-compose/environments/.api
+    volumes:
+      - ./api/app:/app
 
   celery:
     build: ./api

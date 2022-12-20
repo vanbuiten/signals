@@ -12,6 +12,9 @@ django-rest-swagger
 django-storage-swift
 django-storages
 
+# Mozilla Django OIDC
+mozilla-django-oidc
+
 # Database
 psycopg2-binary
 
@@ -39,6 +42,9 @@ raven
 
 #Azure insight
 opencensus-ext-azure
+
+# Azure blob storage
+azure-storage-blob
 
 # PDF
 weasyprint==52.5
@@ -72,5 +78,8 @@ networkx
 # Markdown
 django-markdownx
 Markdown
+
+jsonschema
+setuptools
 
 uWSGI

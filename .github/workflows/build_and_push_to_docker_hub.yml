@@ -21,12 +21,12 @@ jobs:
       - name: Build the release Docker image
         run: |
           cd api/
-          docker build -t signalen/backend:${{ github.event.release.tag_name }} .
+          docker build --target app -t signalen/backend:${{ github.event.release.tag_name }} .
 
       - name: Build the latest Docker image
         run: |
           cd api/
-          docker build -t signalen/backend:latest .
+          docker build  --target app -t signalen/backend:latest .
 
       - name: Push the tagged image to Docker
         run: docker push signalen/backend:${{ github.event.release.tag_name }}
