@@ -224,7 +224,6 @@ CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', True) in TRUE_VALUES
 LANGUAGE_CODE = 'nl-NL'
 TIME_ZONE = 'Europe/Amsterdam'
 USE_I18N = True
-USE_L10N = True
 USE_TZ = True
 DATETIME_FORMAT = 'l d-m-Y, H:i'  # e.g. "Donderdag 06-09-2018, 13:56"
 
